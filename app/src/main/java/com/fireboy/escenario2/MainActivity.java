@@ -1,6 +1,5 @@
 package com.fireboy.escenario2;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         rbInfo.add(findViewById(R.id.rbInfo2));
         rbInfo.add(findViewById(R.id.rbInfo3));
 
-        opciones.add("Ciudades");
-        opciones.add("Frutas");
-        opciones.add("Coches");
+        opciones.add(getString(R.string.ciudades));
+        opciones.add(getString(R.string.frutas));
+        opciones.add(getString(R.string.coches));
 
         spInfo.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, opciones));
 
@@ -47,23 +46,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @SuppressLint("SetTextI18n")
     private void actualizarInfo(int pos) {
         switch (pos) {
             case 0:
-                rbInfo.get(0).setText("Sevilla");
-                rbInfo.get(1).setText("Huelva");
-                rbInfo.get(2).setText("Cádiz");
+                rbInfo.get(0).setText(R.string.sevilla);
+                rbInfo.get(1).setText(R.string.huelva);
+                rbInfo.get(2).setText(R.string.cadiz);
                 break;
             case 1:
-                rbInfo.get(0).setText("Manzana");
-                rbInfo.get(1).setText("Naranja");
-                rbInfo.get(2).setText("Piña");
+                rbInfo.get(0).setText(R.string.manzana);
+                rbInfo.get(1).setText(R.string.naranja);
+                rbInfo.get(2).setText(R.string.pinia);
                 break;
             case 2:
-                rbInfo.get(0).setText("Seat");
-                rbInfo.get(1).setText("Renault");
-                rbInfo.get(2).setText("Ford");
+                rbInfo.get(0).setText(R.string.seat);
+                rbInfo.get(1).setText(R.string.renault);
+                rbInfo.get(2).setText(R.string.ford);
                 break;
         }
     }
